@@ -1,5 +1,2 @@
-FROM odoo:16
-USER root
-RUN pip3 install psycopg2-binary
-USER odoo
-
+FROM odoo:17
+COPY ./odoo.conf /etc/odoo/odoo.conf
