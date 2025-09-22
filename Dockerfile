@@ -2,4 +2,8 @@ FROM odoo:17
 
 COPY ./odoo.conf /etc/odoo/odoo.conf
 
-CMD ["odoo"]
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
