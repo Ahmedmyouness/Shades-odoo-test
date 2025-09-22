@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "➡️ Running Odoo DB initialization..."
+echo "➡️ Initializing Odoo DB..."
 odoo -i base \
   -d odoo_db_8syn \
   --db_host=$DB_HOST \
