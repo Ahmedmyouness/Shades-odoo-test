@@ -12,4 +12,10 @@ odoo -i base \
   --stop-after-init || true
 
 echo "➡️ Starting Odoo server..."
-exec odoo -c /etc/odoo/odoo.conf
+exec odoo \
+  -d $DB_NAME \
+  --db_host=$DB_HOST \
+  --db_port=$DB_PORT \
+  --db_user=$DB_USER \
+  --db_password=$DB_PASSWORD \
+  -c /etc/odoo/odoo.conf
