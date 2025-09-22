@@ -3,7 +3,7 @@ set -e
 
 echo "➡️ Initializing Odoo DB..."
 odoo -i base \
-  -d odoo_db_8syn \
+  -d $DB_NAME \
   --db_host=$DB_HOST \
   --db_port=$DB_PORT \
   --db_user=$DB_USER \
