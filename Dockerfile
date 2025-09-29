@@ -7,4 +7,6 @@ ENV LC_ALL C.UTF-8
 COPY ./odoo.conf /etc/odoo/odoo.conf
 COPY ./entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["bash", "/entrypoint.sh"]
+RUN chmod 755 /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
