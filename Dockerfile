@@ -11,3 +11,4 @@ COPY ./odoo.conf /etc/odoo/odoo.conf
 COPY ./entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["odoo", "-c", "/etc/odoo/odoo.conf"]
