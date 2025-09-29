@@ -1,6 +1,14 @@
 #!/bin/bash
 set -e
 
+echo "➡️ Checking PostgreSQL connection..."
+until pg_isready -h $DB_HOST -p $DB_PORT -U $DB_USER; do
+  echo "⏳ Waiting for PostgreSQL at $DB_HOST:$DB_PORT..."
+  sleep 2
+done
+
+echo "✅ PostgreSQL is up and running!"
+
 echo "➡️ Initializing Odoo DB..."
 odoo -i base \
   -d $DB_NAME \
